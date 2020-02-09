@@ -1,5 +1,5 @@
 # MNIST
-Sharing my first [Kaggle](https://www.kaggle.com/c/digit-recognizer) Subscription for MNIST using what I have learned on fast.ai machine learning course. I also explain a lot of the code in the jupyter notebook itself.
+Sharing my first Kaggle Subscription for [Digit Recognition with MNIST-Dataset](https://www.kaggle.com/c/digit-recognizer) using what I have learned on fast.ai machine learning course. I also explain a lot of the code in the jupyter notebook itself.
 
 
 
