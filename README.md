@@ -1,8 +1,9 @@
 # Machine Learning for Handwritten Digit Recognition
-Sharing my first Kaggle Subscription for [Digit Recognition with MNIST-Dataset](https://www.kaggle.com/c/digit-recognizer) using what I have learned on fast.ai machine learning course. I also explain a lot of the code in the [jupyter notebook](https://github.com/KonstantinHebenstreit/MNIST/blob/master/mnist_sgd.ipynb) itself.
+Sharing my first Kaggle Subscription for [Digit Recognition with MNIST-Dataset](https://www.kaggle.com/c/digit-recognizer) using what I have learned on fast.ai machine learning course. This code is based on the forth [lesson](https://github.com/fastai/fastai/blob/master/courses/ml1/lesson4-mnist_sgd.ipynb) of the course.
+I also explain a lot of my code in the [jupyter notebook](https://github.com/KonstantinHebenstreit/MNIST/blob/master/mnist_sgd.ipynb) itself.
 
 ## MNIST Dataset
-Here is an example picture of the MNIST dataset with the related digit.
+The MNIST Dataset is a large collection of handwritten digits. Here is an example picture of the MNIST dataset with the related digit.
 ![Picture number two rated](figures/single_img_plot.png)
 
 ## Training a Neural Net
