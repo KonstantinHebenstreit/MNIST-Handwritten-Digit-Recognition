@@ -3,7 +3,7 @@ Sharing my first Kaggle Subscription for [Digit Recognition with MNIST-Dataset](
 I also explain a lot of my code in the [jupyter notebook](https://github.com/KonstantinHebenstreit/MNIST/blob/master/mnist_sgd.ipynb) itself.
 
 ## MNIST Dataset
-The MNIST Dataset is a large collection of handwritten digits. Here is an example picture of the MNIST dataset with the related digit.
+The MNIST Dataset is a large collection of handwritten digits. Here is an example picture of the MNIST dataset with the related digit as title.
 
 ![Picture number two predicted](figures/single_img_plot.png)
 
