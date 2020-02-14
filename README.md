@@ -4,7 +4,8 @@ I also explain a lot of my code in the [jupyter notebook](https://github.com/Kon
 
 ## MNIST Dataset
 The MNIST Dataset is a large collection of handwritten digits. Here is an example picture of the MNIST dataset with the related digit.
-![Picture number two rated](figures/single_img_plot.png)
+
+![Picture number two predicted](figures/single_img_plot.png)
 
 ## Training a Neural Net
 
@@ -17,15 +18,14 @@ import torch.nn as nn
 ```
 
 ```python
-u= 200
 net = nn.Sequential(
-    nn.Linear(28*28, u),
+    nn.Linear(28*28, 200),
     nn.ReLU(),
-    nn.Linear(u, u),
+    nn.Linear(200, 200),
     nn.ReLU(),
-    nn.Linear(u, u),
+    nn.Linear(200, 200),
     nn.ReLU(),
-    nn.Linear(u, 10),
+    nn.Linear(200, 10),
     nn.LogSoftmax()
 )
 ```
@@ -56,7 +56,9 @@ for i in range(len(preds)):
 ```
 <table border="1" class="dataframe">  <thead>    <tr style="text-align: right;">      <th></th>      <th>0</th>      <th>1</th>      <th>2</th>      <th>3</th>      <th>4</th>      <th>5</th>      <th>6</th>      <th>7</th>      <th>8</th>      <th>9</th>    </tr>  </thead>  <tbody>    <tr>      <th>0</th>      <td>708.0</td>      <td>0.0</td>      <td>4.0</td>      <td>2.0</td>      <td>1.0</td>      <td>3.0</td>      <td>3.0</td>      <td>1.0</td>      <td>0.0</td>      <td>4.0</td>    </tr>    <tr>      <th>1</th>      <td>0.0</td>      <td>770.0</td>      <td>0.0</td>      <td>2.0</td>      <td>2.0</td>      <td>0.0</td>      <td>2.0</td>      <td>1.0</td>      <td>2.0</td>      <td>0.0</td>    </tr>    <tr>      <th>2</th>      <td>0.0</td>      <td>1.0</td>      <td>650.0</td>      <td>7.0</td>      <td>0.0</td>      <td>1.0</td>      <td>0.0</td>      <td>5.0</td>      <td>1.0</td>      <td>1.0</td>    </tr>    <tr>      <th>3</th>      <td>0.0</td>      <td>0.0</td>      <td>5.0</td>      <td>694.0</td>      <td>0.0</td>      <td>2.0</td>      <td>0.0</td>      <td>0.0</td>      <td>2.0</td>      <td>0.0</td>    </tr>    <tr>      <th>4</th>      <td>0.0</td>      <td>0.0</td>      <td>0.0</td>      <td>0.0</td>      <td>673.0</td>      <td>0.0</td>      <td>2.0</td>      <td>0.0</td>      <td>0.0</td>      <td>8.0</td>    </tr>    <tr>      <th>5</th>      <td>0.0</td>      <td>0.0</td>      <td>1.0</td>      <td>8.0</td>      <td>0.0</td>      <td>575.0</td>      <td>1.0</td>      <td>1.0</td>      <td>3.0</td>      <td>3.0</td>    </tr>    <tr>      <th>6</th>      <td>6.0</td>      <td>2.0</td>      <td>1.0</td>      <td>0.0</td>      <td>4.0</td>      <td>5.0</td>      <td>703.0</td>      <td>0.0</td>      <td>1.0</td>      <td>0.0</td>    </tr>    <tr>      <th>7</th>      <td>0.0</td>      <td>2.0</td>      <td>2.0</td>      <td>3.0</td>      <td>0.0</td>      <td>0.0</td>      <td>0.0</td>      <td>703.0</td>      <td>0.0</td>      <td>4.0</td>    </tr>    <tr>      <th>8</th>      <td>1.0</td>      <td>5.0</td>      <td>7.0</td>      <td>8.0</td>      <td>6.0</td>      <td>6.0</td>      <td>0.0</td>      <td>3.0</td>      <td>678.0</td>      <td>4.0</td>    </tr>    <tr>      <th>9</th>      <td>1.0</td>      <td>1.0</td>      <td>1.0</td>      <td>5.0</td>      <td>19.0</td>      <td>8.0</td>      <td>0.0</td>      <td>5.0</td>      <td>0.0</td>      <td>657.0</td>    </tr>  </tbody></table>
 
-## Analysing the false rated pictures
+Lines are predictions and columns are correct answers. We can see that it is hard to differetiate between the number 4 and the number 9. When the Neural Net predicted number 9 it was actually number 4 nineteen times. Vice versa, when it predited number 4, it was actually number 9 eight times.
+
+## Analysing the incorrect predicted pictures
 ```python
 plots(x_imgs[false_pics[:20]], 
     titles= [(i,j) for i, j in zip(preds[false_pics[:20]],y_valid[false_pics[:20]])])
@@ -64,9 +66,9 @@ plots(x_imgs[false_pics[:20]],
 The first number in the title is the predicted number, the second is the valid one
 ![False rated pictures](figures/false_rated.png)
 
-So there are a lot of pictures, which are clearly false rated by the neural net. But I'm looking through 
-these pictures to see if all of them correct rated and solveable. I find some exeptions, so although a neural net can perform a lot better than my current one, I doubt it is possible to reach 100% accuracy.
+So there are a lot of pictures, which are clearly predicted incorrectly by the neural net. But I'm looking through 
+these pictures to see if all of them are rated correctly and solveable. I find some exeptions, so although a neural net can perform a lot better than my current one, I doubt it is possible to reach 100% accuracy.
 ![Difficult to predict pictures](figures/hard_to_predict.png)
 
 ## Score
-The accuracy score of this neural net on Kaggle is 0.97628
+The public score of the accuracy of this neural net on Kaggle is 0.97628
