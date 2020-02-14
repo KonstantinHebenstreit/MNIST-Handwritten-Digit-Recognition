@@ -67,7 +67,7 @@ The first number in the title is the predicted number, the second is the correct
 ![False rated pictures](figures/false_rated.png)
 
 So there are a lot of pictures, which are clearly predicted incorrectly by the neural net. But I'm looking through 
-these pictures to see if all of them are rated correctly and solveable. I find some exeptions, so although a neural net can perform a lot better than my current one, I doubt it is possible to reach 100% accuracy.
+these pictures to see if all of them are rated correctly and solveable. I find some exeptions. Although a neural net can perform a lot better than my current one, I doubt it is possible to reach 100% accuracy.
 ![Difficult to predict pictures](figures/hard_to_predict.png)
 
 ## Score
